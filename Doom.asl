@@ -2,7 +2,7 @@ state("DOOMx64")
 {
 	bool isLoading: 0x308E940;
 	bool canStart: 0x331162C;
-	bool canStart3: 0x337EA9C;
+	bool canStart3: 0xB63405C;
 	bool start: 0x337EA9C;
 	bool mainMenu: 0x308D55C;
 	string20 mapName: "DOOMx64.exe", 0x2818178, 0x168, 0x1C;
