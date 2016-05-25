@@ -1,8 +1,7 @@
 state("DOOMx64")
 {
 	bool isLoading: 0x308E940;
-	bool canStart: 0x331162C;
-	bool canStart3: 0xB63405C;
+	bool canStart: 0xB63405C;
 	bool start: 0x337EA9C;
 	bool mainMenu: 0x308D55C;
 	string20 mapName: "DOOMx64.exe", 0x2818178, 0x168, 0x1C;
@@ -13,7 +12,7 @@ state("DOOMx64")
 start
 {
 
-	return (current.mapName.StartsWith("intro") && (!old.start && current.start) && !current.isLoading && (!current.canStart || !current.canStart3));
+	return (current.mapName.StartsWith("intro") && (!old.start && current.start) && !current.isLoading && !current.canStart);
 }
 
 isLoading
@@ -34,5 +33,5 @@ exit
 
 reset
 {
-	return current.mapName.StartsWith("intro") && (current.canStart || current.canStart3) && current.mainMenu && current.finalHit && !current.start;
+	return current.mapName.StartsWith("intro") && current.canStart && !current.mainMenu && current.finalHit && current.start;
 }
